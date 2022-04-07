@@ -12,3 +12,20 @@ body {
     color: #25364a;
     background-color: #ffff;
 }
+.signupbox{
+    background-color: rgba(red, green, blue, alpha);
+    padding: 40px;
+    width: 250px;
+}
+
+.nav-bar{
+    display: flex;
+    border: 3px solid #333;
+    width:100%;
+    margin-bottom: 50px;
+    padding: 20px;
+    justify-content:space-evenly;
+    background-color:rosybrown;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
