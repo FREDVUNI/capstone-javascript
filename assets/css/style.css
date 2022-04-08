@@ -11,21 +11,110 @@ body {
     font-size: 16px;
     color: #25364a;
     background-color: #ffff;
+    text-align: center;
+}
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
 }
 .signupbox{
-    background-color: rgba(red, green, blue, alpha);
     padding: 40px;
-    width: 250px;
+    background:whitesmoke;
+    width: 350px;
+    margin: auto;
+    margin-top: 90px;    
+
+}
+input{
+    text-align: center;
+    border: none;
+    border-bottom: white 1px solid;
+    font-size: 18px;
+    font-weight: 200px;
+    outline: none;
+    transition: bolder 0.5s;
+
+}
+::placeholder{
+    color: orange;
+    opacity: 0.5px;
+
+}
+form{
+    margin-top: -10px;
+    width: 240px;
+    
 }
 
-.nav-bar{
-    display: flex;
-    border: 3px solid #333;
-    width:100%;
-    margin-bottom: 50px;
-    padding: 20px;
-    justify-content:space-evenly;
-    background-color:rosybrown;
-    overflow: hidden;
+
+
+
+button{
+    color: black;
+    border-radius: 25px;
+    padding: 10px 0;
+    width: 150px;
+    line-height: 25px;
+    cursor: pointer;
+    font-size: 20px;
+
+
+}
+button:hover{
+    background: black;
+    color: white;
+    word-spacing: 100px;
+}
+.login{
+    
+}
+a{
+    color: orange;
+}
+a:hover{
+    color: cyan;
+}
+header{
+    width: 100%;
+    height: 100px;
+    background:brown;
     position: fixed;
-    top: 0;
+
+  
+}
+.logo{
+    width: 30%;
+    float: left;
+    text-align: left;
+    line-height: 100px;
+}
+.logo a{
+    text-decoration: none;
+    font-size: 30px;
+    color:#fff ;
+    letter-spacing: 4px;
+   
+
+}
+nav{
+    float: right;
+    line-height: 100px;
+}
+nav a{
+    text-decoration: none;
+    letter-spacing: 4px;
+    font-size: 20px;
+    color: white;
+    padding: 36px 10px;
+    margin: 0 1px;
+    font-weight: 500px;
+
+}
+nav a:hover{
+    background: #fff;
+    color: #130f40;
+
+}
+.banner-area{
+    background-image: url;
+}
