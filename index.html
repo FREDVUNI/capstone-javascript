@@ -40,7 +40,13 @@
     </div>
     <div class="content">
         <h2 class="title">Featured Products</h2>
-        <a href="products.html" id="all">view all products</a>
+        <div class="rowOne">
+            <a href="products.html" id="all">view all products</a>
+            <form id="searchGadget">
+                <input type="text" placeholder="Enter product or category" id="search" autocomplete="off"/>
+                <span id="errorSearch"></span>
+            </form>
+        </div>
         <div class="row products">
         </div>
     </div>

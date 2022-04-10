@@ -83,15 +83,17 @@ let categoryProducts = () =>{
     let result = ""
 
     //get all categories
+    const products = JSON.parse(localStorage.getItem("products"))
     const categories = Object.values(products.reduce((a,{category})=>{
         a[category]={category}
         return a;
     },{}))
+    
 
     if(categories){
         categories.forEach(c=>{
             result += `
-                <div class="col">
+                <div class="col product-cat">
                     <p>${c.category}</p>
                 </div>
             `
@@ -132,6 +134,8 @@ let getSingleProduct = () =>{
                 <h4>${oneProduct.price}</h4>
                 <h3 id="details">Description</h3>
                 <p>${oneProduct.details}</p>
+                <h3 id="details">In Stock</h3>
+                <p>${oneProduct.stock}</p>
                 <input type="number" value="1" min="1" id="cart-input"/>
                 <button class="btn" data-id=${oneProduct.id}><i class="fa fa-shopping-cart"></i> Add to cart</button>
             </div>
@@ -146,7 +150,6 @@ let getSingleProduct = () =>{
 if(singleProduct){
     getSingleProduct()
 }
-
 
 let getRelatedProducts = () =>{
     let result = ""
@@ -202,6 +205,58 @@ let saveProducts = (products) =>{
 let getProduct = (id) =>{
     let products = JSON.parse(localStorage.getItem("products"))
     return products.find(product => product.id == id)
+}
+
+let search = () =>{
+    let searchQuery = document.querySelector("#search")
+    let search = document.querySelector("#searchGadget")
+    let errorSearch = document.querySelector("#errorSearch")
+    let result = ""
+
+    search.addEventListener("submit",(e)=>{
+        e.preventDefault()
+
+        let products = JSON.parse(localStorage.getItem("products"))
+        const searched = products.filter(product => 
+            (product.category).toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+            (product.product).toLowerCase().includes(searchQuery.value.toLowerCase())
+        )
+
+        if(searchQuery.value === ""){
+            searchQuery.style.border = "solid 1px #dc3545"
+            errorSearch.style.color="#dc3545"
+            errorSearch.style.float="left"
+            errorSearch.innerText = "The search value is required." 
+        }
+
+        if(searched){
+            searched.map(product=>{
+            result += `<div class="col4 product" data-id=${product.id}>
+                            <img src=${product.image}>
+                            <h2>${product.product}</h2>
+                            <p>${product.price}</p>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    ` 
+                    })
+            productsContainer.innerHTML = result
+            AddSingleProduct()
+            searchQuery.addEventListener("keypress",()=>{
+                location.reload()
+            })
+        }else{
+            console.log("something went wrong")   
+        }
+    })
+}
+if(productsContainer){
+    search()
 }
 
 signIn.addEventListener("submit", (e) => {
