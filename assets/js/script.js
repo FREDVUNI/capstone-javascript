@@ -259,27 +259,27 @@ if(productsContainer){
     search()
 }
 
-signIn.addEventListener("submit", (e) => {
-  e.preventDefault();
-    if(email.value === ""){
-        email.style.border = "solid 1px #dc3545"
-        document.querySelector("#errorEmail").style.color="#dc3545"
-        document.querySelector("#errorEmail").style.float="left"
-        document.querySelector("#errorEmail").innerText = "The field email is required."
-    }else{
-        email.style.border = "solid 1px #ccc"
-        document.querySelector("#errorEmail").innerText = ""
-    }
-    if(password.value === ""){
-        password.style.border = "solid 1px #dc3545"
-        document.querySelector("#errorPassword").style.color="#dc3545"
-        document.querySelector("#errorPassword").style.float="left"
-        document.querySelector("#errorPassword").innerText = "The field password is required."        
-    }else{
-        password.style.border = "solid 1px #ccc"
-        document.querySelector("#errorEmail").innerText = ""
-    }
-});
+// signIn.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//     if(email.value === ""){
+//         email.style.border = "solid 1px #dc3545"
+//         document.querySelector("#errorEmail").style.color="#dc3545"
+//         document.querySelector("#errorEmail").style.float="left"
+//         document.querySelector("#errorEmail").innerText = "The field email is required."
+//     }else{
+//         email.style.border = "solid 1px #ccc"
+//         document.querySelector("#errorEmail").innerText = ""
+//     }
+//     if(password.value === ""){
+//         password.style.border = "solid 1px #dc3545"
+//         document.querySelector("#errorPassword").style.color="#dc3545"
+//         document.querySelector("#errorPassword").style.float="left"
+//         document.querySelector("#errorPassword").innerText = "The field password is required."        
+//     }else{
+//         password.style.border = "solid 1px #ccc"
+//         document.querySelector("#errorEmail").innerText = ""
+//     }
+// });
 
 document.addEventListener("DOMContentLoaded",()=>{
     if(productsContainer){

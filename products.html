@@ -6,10 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capstone JavaScript</title>
     <link rel="shortcut icon" href="./assets/images/kanzucode.png" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <h4>Iconic<span>Gadgets...</span></h4>
+                </a>
+            </div>
+            <nav>
+                <ul id="menuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">products</a></li>
+                    <li><a href="signin.html">login</a></li>
+                    <li><a href="signup.html">register</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html"><i class="fas fa-shopping-cart cart"><span>0</span></i></a>
+            <i class="fas fa-bars menu" onclick="toggleMenu()"></i>
+        </div>
+    </div>
     <div class="content">
         <div class="row row2">
             <h2>All Products</h2>
@@ -93,6 +113,7 @@
             <p class="copyright">Copyright Iconicgadgets &copy; <script>document.write(new Date().getFullYear())</script></p>
         </div>
     </div>
+    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
