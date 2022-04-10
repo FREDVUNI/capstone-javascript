@@ -12,22 +12,25 @@
 <body>
     <div class="content">
         <div class="row row2">
-            <div class="col4">
+            <div class="product-col4">
                 <img src="./assets/images/log.svg"/>
             </div>
-            <div class="col1">
+            <div class="sign-col">
                 <div class="form-box">
                     <h2>login</h2>
-                    <form>
-                        <input type="text" placeholder="Enter email address" required/>
-                        <input type="password" placeholder="Enter password" required/>
+                    <form id="signIn">
+                        <input type="text" id="email" placeholder="Enter email address"/>
+                        <span id="errorEmail"></span>
+                        <input type="password" id="password" placeholder="Enter password"/>
+                        <span id="errorPassword"></span>
                         <button type="submit" class="btn">LOGIN</button>
+                        <p>Don't have an account ? <a href="signup.html">Register here</a></p>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <div class="brands">
+    <!-- <div class="brands">
         <div class="content">
             <div class="row">
                 <div class="col5">
@@ -44,7 +47,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="footer">
         <div class="container">
             <div class="row">
@@ -92,7 +95,7 @@
                 </div>
             </div>
             <br/>
-            <p class="copyright">Copyright &copy; <script>document.write(new Date().getFullYear())</script></p>
+            <p class="copyright">Copyright Iconicgadgets &copy; <script>document.write(new Date().getFullYear())</script></p>
         </div>
     </div>
     <script src="./assets/js/script.js"></script>

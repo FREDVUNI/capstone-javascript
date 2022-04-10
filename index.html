@@ -10,124 +10,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 </head>
 <body>
+    <section class="presentation">
+		<div class="introduction">
+			<div class="intro-text">
+				<h1>Iconic Gadgets Collection</h1>
+				<p>
+					Best tech and gadgets to buy right now, tech trends that matter.
+                    Reviews & news: TVs, mobile phones, laptops, audio, smart home.
+				</p>
+			</div>
+			<div class="cta">
+				<a class="banner-btn" href="products.html">shop now</a>
+			</div>
+		</div>
+		<div class="cover">
+			<img src="./assets/images/pic.png" alt="acer">
+		</div>
+	</section>
+    <img class="big-circle" src="./assets/images/big-eclipse.svg" alt="" />
+	<img class="medium-circle" src="./assets/images/mid-eclipse.svg" alt="" />
+	<img class="small-circle" src="./assets/images/small-eclipse.svg" alt="" />
+    
     <div class="categories">
         <div class="content">
-            <div class="row">
-                <div class="col">
-                    <img src="./assets/images/lenovo.jpg"/>
-                </div>
-                <div class="col">
-                    <img src="./assets/images/oppo.jpg"/>
-                </div>
-                <div class="col">
-                    <img src="./assets/images/boat.jpg"/>
-                </div>
+            <div class="row allCategories">
+                
             </div>
         </div>
     </div>
     <div class="content">
         <h2 class="title">Featured Products</h2>
-        <div class="row">
-            <div class="col4">
-                <img src="./assets/images/lenovo.jpg"/>
-                <h2>Lenovo laptop</h2>
-                <p>UGX. 1,430,000</p>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div>
-            <div class="col4">
-                <img src="./assets/images/oppo.jpg"/>
-                <h2>Oppo camera</h2>
-                <p>UGX. 1,430,000</p>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div>
-            <div class="col4">
-                <img src="./assets/images/boat.jpg"/>
-                <h2>Lenovo laptop</h2>
-                <p>UGX. 1,430,000</p>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div>
-            <div class="col4">
-                <img src="./assets/images/galaxy.jpg"/>
-                <h2>Samsung galaxy</h2>
-                <p>UGX. 1,430,000</p>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div>
-            <div class="col4">
-                <img src="./assets/images/acer.jpg"/>
-                <h2>Samsung galaxy</h2>
-                <p>UGX. 1,430,000</p>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div>
-            <div class="col4">
-                <img src="./assets/images/booat.jpg"/>
-                <h2>Samsung galaxy</h2>
-                <p>UGX. 1,430,000</p>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div>
-            <div class="col4">
-                <img src="./assets/images/boat.jpg"/>
-                <h2>Samsung galaxy</h2>
-                <p>UGX. 1,430,000</p>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div>
-
-            <div class="col4">
-                <img src="./assets/images/nikon.jpg"/>
-                <h2>Samsung galaxy</h2>
-                <p>UGX. 1,430,000</p>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div>
+        <div class="rowOne">
+            <a href="products.html" id="all">view all products</a>
+            <form id="searchGadget">
+                <input type="text" placeholder="Enter product or category" id="search" autocomplete="off"/>
+                <span id="errorSearch"></span>
+            </form>
+        </div>
+        <div class="row products">
         </div>
     </div>
-    <div class="brands">
+    <!-- <div class="brands">
         <div class="content">
             <div class="row">
                 <div class="col5">
@@ -144,7 +67,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="footer">
         <div class="container">
             <div class="row">
@@ -192,7 +115,7 @@
                 </div>
             </div>
             <br/>
-            <p class="copyright">Copyright &copy; <script>document.write(new Date().getFullYear())</script></p>
+            <p class="copyright">Copyright Iconicgadgets &copy; <script>document.write(new Date().getFullYear())</script></p>
         </div>
     </div>
     <script src="./assets/js/script.js"></script>
