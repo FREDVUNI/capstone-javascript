@@ -10,31 +10,114 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 </head>
 <body>
-    <div class="box-area">
-        <header>
-            <div class="wrapper">
-                <div class="logo">
-                    <a href="#">The Gadget Guy</a>
-
-
-                </div>
-                <nav>
-                    <a href="Home">Home</a>
-                    <a href="Categories">Categories</a>
-                    <a href="Feed">Feed</a>
-                    <a href="Account">Account</a>
-                    <a href="Help">Help</a>
-
-                </nav>
-
+    <section class="presentation">
+		<div class="introduction">
+			<div class="intro-text">
+				<h1>Iconic Gadgets Collection</h1>
+				<p>
+					Best tech and gadgets to buy right now, tech trends that matter.
+                    Reviews & news: TVs, mobile phones, laptops, audio, smart home.
+				</p>
+			</div>
+			<div class="cta">
+				<a class="banner-btn" href="products.html">shop now</a>
+			</div>
+		</div>
+		<div class="cover">
+			<img src="./assets/images/pic.png" alt="acer">
+		</div>
+	</section>
+    <img class="big-circle" src="./assets/images/big-eclipse.svg" alt="" />
+	<img class="medium-circle" src="./assets/images/mid-eclipse.svg" alt="" />
+	<img class="small-circle" src="./assets/images/small-eclipse.svg" alt="" />
+    
+    <div class="categories">
+        <div class="content">
+            <div class="row allCategories">
+                
             </div>
-        </header>
-        
-        
-
+        </div>
     </div>
-    
-    
+    <div class="content">
+        <h2 class="title">Featured Products</h2>
+        <div class="rowOne">
+            <a href="products.html" id="all">view all products</a>
+            <form id="searchGadget">
+                <input type="text" placeholder="Enter product or category" id="search" autocomplete="off"/>
+                <span id="errorSearch"></span>
+            </form>
+        </div>
+        <div class="row products">
+        </div>
+    </div>
+    <!-- <div class="brands">
+        <div class="content">
+            <div class="row">
+                <div class="col5">
+                    <img src="./assets/images/redmibrand.jpg"/>
+                </div>
+                <div class="col5">
+                    <img src="./assets/images/samsungbrand.jpg"/>
+                </div>
+                <div class="col5">
+                    <img src="./assets/images/applebrand.jpg"/>
+                </div>
+                <div class="col5">
+                    <img src="./assets/images/acerbrand.jpg"/>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-co11">
+                    <h3>About us</h3>
+                    <p>lorem capstone javascript lorem capstone javascript lorem capstone javascript lorem capstone javascript.</p>
+                    <p>lorem capstone javascript lorem capstone javascript lorem capstone javascript lorem capstone javascript.</p>
+                </div>
+                <div class="footer-co12">
+                    <h3>Links</h3>
+                    <ul>
+                        <li>
+                            <a href="#">products</a>
+                        </li>
+                        <li>
+                            <a href="#">products</a>
+                        </li>
+                        <li>
+                            <a href="#">products</a>
+                        </li>
+                        <li>
+                            <a href="#">products</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-co13">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-twitter"></i> Twitter
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <br/>
+            <p class="copyright">Copyright Iconicgadgets &copy; <script>document.write(new Date().getFullYear())</script></p>
+        </div>
+    </div>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
