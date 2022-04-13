@@ -53,6 +53,57 @@ let displayProducts = () =>{
 if(productsContainer){
     displayProducts()  
 }
+// let displayProducts = () =>{
+//     let result = ""
+//     if(products){
+//     let rate = JSON.parse(localStorage.getItem("ratings"))
+//     rate.map(p=>{
+//         let ratings = rate.find(product=>product.product === p.product)
+//         console.log(ratings.rate)
+//     products.splice(0,8).forEach(product=>{
+//         result += `
+//             <div class="col4 product" data-id=${product.id}>
+//             <img src=${product.image}>
+//             <h2>${product.product}</h2>
+//             <p>${product.price}</p>`
+//         result += `<div class="rating">`
+//         if(ratings.rate == 5){
+//             result += `<i class="fa fa-star"></i>`
+//             result += `<i class="fa fa-star"></i>`
+//             result += `<i class="fa fa-star"></i>`
+//             result += `<i class="fa fa-star"></i>`
+//             result += `<i class="fa fa-star"></i>`
+//         }else if(ratings.rate === 4){
+//             result += `<i class="fa fa-star"></i>`
+//             result += `<i class="fa fa-star"></i>`
+//             result += `<i class="fa fa-star"></i>`
+//             result += `<i class="fa fa-star"></i>`
+//         }else if(ratings.rate === 3){
+//             result += `<i class="fa fa-star"></i>`
+//             result += `<i class="fa fa-star"></i>`
+//             result += `<i class="fa fa-star"></i>`
+//         }else if(ratings.rate === 2){
+//             result += `<i class="fa fa-star"></i>`
+//             result += `<i class="fa fa-star"></i>`
+//         }else if(ratings.rate === 1){
+//             result += `<i class="fa fa-star"></i>`
+//         }else{
+//             result += `<i class="far fa-star"></i>`
+//             result += `<i class="far fa-star"></i>`
+//             result += `<i class="far fa-star"></i>`
+//             result += `<i class="far fa-star"></i>`
+//             result += `<i class="far fa-star"></i>`
+//         }
+//         result += `</div>`
+//         result += `</div>`
+//         })
+//     })
+//     }
+//     productsContainer.innerHTML = result
+// }
+// if(productsContainer){
+//     displayProducts()  
+// }
 
 let allProducts = () =>{
     let result = ""
@@ -206,13 +257,19 @@ let getUser = () =>{
             <h4>${userProfile[0].email}</h4>
             <p class="listHistory">Recent orders </p>
         `
-        history.map(user=>{
-        result += `
+        if(history){
+            history.map(user=>{
+            result += `
             <li class="listHistory">
                 ${user.product}(${user.category}) - ${user.price}
             </li>
-        `
-        })
+            `
+            })
+        }else{
+            result += `<li id="profileHis">
+                You have no order history
+            </li>`
+        }
     }
     profile.innerHTML = result
 
@@ -322,6 +379,12 @@ let cart = () =>{
         document.querySelector("#cart-error").innerText = `There are currently no items in the cart`
         document.querySelector("#cart-error").style.color ="#dc3545"
         document.querySelector("#cart-error").style.textAlign ="center"
+
+        let clear_cart = document.querySelector(".clear-cart")
+        let checkout = document.querySelector(".checkout")
+
+        clear_cart.innerHTML = `<a href="index.html" class="backHome">Home</a>`
+        checkout.innerHTML = `<a href="shop.html" class="backProducts">Products</a>`
     }
     cartProducts.innerHTML = result
 }
@@ -516,11 +579,15 @@ container.onclick = e =>{
         items.forEach(
             item => item.classList.remove("active")
         );
-        console.log(e.target.getAttribute("data-rate"),oneProduct.product)
-        elClass.add("active")
+        // console.log(e.target.getAttribute("data-rate"),oneProduct.product)
+        elClass.add("active")   
         }
-        // let stars = new Array({e.target.getAttribute("data-rate"),oneProduct.product})
-        localStorage.setItem("ratings",stars) 
+        let rate = JSON.parse(localStorage.getItem("ratings"))
+        let product = rate.some(rate=>rate.product === oneProduct.product)
+        if(rate && !product){
+            rate.push({"product":oneProduct.product,"rate":e.target.getAttribute("data-rate")})
+            localStorage.setItem("ratings",JSON.stringify(rate)) 
+        }
     }
 }
 if(container){

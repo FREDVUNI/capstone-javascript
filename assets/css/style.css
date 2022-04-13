@@ -300,7 +300,7 @@ h4{
 .col4{
     font-size:14px;
 }
-.rating .fa{
+.rating .fa-star{
     color:#ff523b;
 }
 .brands{
@@ -330,8 +330,11 @@ h4{
   font-size: 0.9rem;
   height: 48px;
 }
-#reg-error,#login-error{
+#reg-error,#login-error,#profileHis{
     color: #dc3545;
+}
+#profileHis{
+    text-align:left;
 }
 select{
     display: block;
@@ -394,6 +397,13 @@ select:focus{
 }
 #details{
     margin-top:35px;
+}
+.backProducts,.backHome{
+    text-decoration:none;
+    color:#ffff;
+}
+.backProducts:hover,.backHome:hover{
+    color:#ff523b;
 }
 .rating{
     display:flex;
