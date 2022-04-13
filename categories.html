@@ -21,28 +21,29 @@
                 <ul id="menuItems">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="products.html">Products</a></li>
-                    <li id="log"><a href="signin.html">Login</a></li>
-                    <li id="reg"><a href="signup.html">Register</a></li>
+                    <li><a href="signin.html">Login</a></li>
+                    <li><a href="signup.html">Register</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
-            <a href="cart.html"><i class="fas fa-shopping-cart cart"><span id="itemsNum"></span></i></a>
+            <a href="cart.html"><i class="fas fa-shopping-cart cart"> <span id="itemsNum"></span></i></a>
             <i class="fas fa-bars menu" onclick="toggleMenu()"></i>
         </div>
     </div>
-    <div class="content row2">
-        <div id="cart-error"></div>
-        <!-- <h2 class="title">cart</h2> -->
-        <div class="row" id="contentCart">
+    <div class="content">
+        <div class="row row2">
+            <h2>Products by category</h2>
+            <select>
+                <option>Default Sorting</option>
+                <option id="new-old">Sort by new to old</option>
+                <option id="old-new">Sort by old to new</option>
+                <option id="a-z">Sort by A-Z</option>
+                <option id="z-a">Sort by Z-A</option>
+            </select>
+        </div>
+        <div class="row category-product">
             
         </div>
-        <div id="total-error"></div>
-        <div class="total-price">
-                
-        </div>
-        <button class="btn clear-cart">CLEAR CART</button>
-        <button class="btn checkout">COMPLETE ORDER</button>
-
     </div>
     <!-- <div class="brands">
         <div class="content">
