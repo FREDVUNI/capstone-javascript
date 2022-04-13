@@ -220,17 +220,21 @@ nav ul li a:hover{
   min-width:200px;
   margin-bottom:20px;
 }
-.col p{
+.clear-cart{
+    margin-top:20px;
+}
+.col a{
     width:100%;
     border:5px solid #ccc;
     cursor:pointer;
     padding: 30px;
-    color: rgb(85, 85, 85);
+    color: rgb(34, 12, 12);
     font-size: 1.5em;
     text-transform: uppercase;
     text-align: center;
+    text-decoration:none;
 }
-.col p:hover{
+.col a:hover{
     border: 5px solid #ff523b;
     color: #ff523b;
 }
@@ -326,6 +330,9 @@ h4{
   font-size: 0.9rem;
   height: 48px;
 }
+#reg-error,#login-error{
+    color: #dc3545;
+}
 select{
     display: block;
     height: calc(1.6em + 0.75rem + 2px);
@@ -380,8 +387,42 @@ select:focus{
   line-height: 1.6;
   cursor:pointer;
 }
+.btn:hover{
+    background-color:#fff;
+    color:#ff523b;
+    border: 1px solid #ff523b;
+}
 #details{
     margin-top:35px;
+}
+.rating{
+    display:flex;
+    padding:0;
+    margin:0;
+}
+.rating li{
+    list-style-type:none;
+}
+.rating-item{
+    border:1px solid #fff;
+    cursor:pointer;
+    font-size:2em;
+    color:#ff523b;
+}
+.rating-item::before{
+    content:"\2605";
+}
+.rating-item.active ~ .rating-item::before{
+    content:"\2606";
+}
+.rating:hover .rating-item::before{
+    content:"\2605";
+}
+.rating-item:hover ~ .rating-item::before{
+    content:"\2606";
+}
+.listHistory{
+    text-align:left;
 }
 table{
     width: 100%;
