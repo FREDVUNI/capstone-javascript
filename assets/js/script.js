@@ -13,12 +13,16 @@ const userProfile = JSON.parse(localStorage.getItem("LoggedIn"))
 
 
 let getProducts = () =>{
-    fetch("http://127.0.0.1:5501/products.json")
-    .then(response=>response.json())
-    .then((data) =>{ 
-        let result = data
-        saveProducts(result)
-    })
+    if(!products){
+        fetch("http://127.0.0.1:5501/products.json")
+        .then(response=>response.json())
+        .then((data) =>{ 
+            let result = data
+            saveProducts(result)
+        })
+    }else{
+        rateProduct()
+    }
 }
 
 window.onload = function () {
@@ -36,74 +40,47 @@ let displayProducts = () =>{
             <div class="col4 product" data-id=${product.id}>
                 <img src=${product.image}>
                 <h2>${product.product}</h2>
-                <p>${product.price}</p>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div>
-        `
+                <p>${product.price}</p>`
+                result += `<div class="rating">`
+                if(product.rate == 5){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(product.rate == 4){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(product.rate == 3){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(product.rate == 2){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(product.rate == 1){
+                    result += `<i class="fa fa-star"></i>`
+                }else{
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                }
+                result += `</div>`
+                result += `</div>`
+
     })
+
     }
     productsContainer.innerHTML = result
+
 }
 if(productsContainer){
     displayProducts()  
 }
-// let displayProducts = () =>{
-//     let result = ""
-//     if(products){
-//     let rate = JSON.parse(localStorage.getItem("ratings"))
-//     rate.map(p=>{
-//         let ratings = rate.find(product=>product.product === p.product)
-//         console.log(ratings.rate)
-//     products.splice(0,8).forEach(product=>{
-//         result += `
-//             <div class="col4 product" data-id=${product.id}>
-//             <img src=${product.image}>
-//             <h2>${product.product}</h2>
-//             <p>${product.price}</p>`
-//         result += `<div class="rating">`
-//         if(ratings.rate == 5){
-//             result += `<i class="fa fa-star"></i>`
-//             result += `<i class="fa fa-star"></i>`
-//             result += `<i class="fa fa-star"></i>`
-//             result += `<i class="fa fa-star"></i>`
-//             result += `<i class="fa fa-star"></i>`
-//         }else if(ratings.rate === 4){
-//             result += `<i class="fa fa-star"></i>`
-//             result += `<i class="fa fa-star"></i>`
-//             result += `<i class="fa fa-star"></i>`
-//             result += `<i class="fa fa-star"></i>`
-//         }else if(ratings.rate === 3){
-//             result += `<i class="fa fa-star"></i>`
-//             result += `<i class="fa fa-star"></i>`
-//             result += `<i class="fa fa-star"></i>`
-//         }else if(ratings.rate === 2){
-//             result += `<i class="fa fa-star"></i>`
-//             result += `<i class="fa fa-star"></i>`
-//         }else if(ratings.rate === 1){
-//             result += `<i class="fa fa-star"></i>`
-//         }else{
-//             result += `<i class="far fa-star"></i>`
-//             result += `<i class="far fa-star"></i>`
-//             result += `<i class="far fa-star"></i>`
-//             result += `<i class="far fa-star"></i>`
-//             result += `<i class="far fa-star"></i>`
-//         }
-//         result += `</div>`
-//         result += `</div>`
-//         })
-//     })
-//     }
-//     productsContainer.innerHTML = result
-// }
-// if(productsContainer){
-//     displayProducts()  
-// }
 
 let allProducts = () =>{
     let result = ""
@@ -112,16 +89,37 @@ let allProducts = () =>{
             result += `<div class="col4 product" data-id=${product.id}>
                 <img src=${product.image}>
                 <h2>${product.product}</h2>
-                <p>${product.price}</p>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div>
-        ` 
+                <p>${product.price}</p>`
+                result += `<div class="rating">`
+                if(product.rate == 5){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(product.rate == 4){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(product.rate == 3){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(product.rate == 2){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(product.rate == 1){
+                    result += `<i class="fa fa-star"></i>`
+                }else{
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                }
+                result += `</div>`
+                result += `</div>` 
         })
         allProductsContainer.innerHTML = result
     }
@@ -227,16 +225,37 @@ let getCategoryProducts = () =>{
             <div class="col4 product" data-id=${category.id}>
                 <img src=${category.image}>
                 <h2>${category.product}</h2>
-                <p>${category.price}</p>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div>
-        `
+                <p>${category.price}</p>`
+                result += `<div class="rating">`
+                if(category.rate == 5){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(category.rate == 4){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(category.rate == 3){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(category.rate == 2){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(category.rate == 1){
+                    result += `<i class="fa fa-star"></i>`
+                }else{
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                }
+                result += `</div>`
+                result += `</div>`
         })
     }else{
         window.location = "index.html"
@@ -290,16 +309,37 @@ let getRelatedProducts = () =>{
             <div class="col4 product" data-id=${product.id}>
                 <img src=${product.image}>
                 <h2>${product.product}</h2>
-                <p>${product.price}</p>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div>
-        `
+                <p>${product.price}</p>`
+                result += `<div class="rating">`
+                if(product.rate == 5){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(product.rate == 4){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(product.rate == 3){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(product.rate == 2){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(product.rate == 1){
+                    result += `<i class="fa fa-star"></i>`
+                }else{
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                }
+                result += `</div>`
+                result += `</div>`
     })
     }else{
         let error = document.getElementById("noRelation")
@@ -326,6 +366,7 @@ let shuffleProducts = (array) =>{
 }
 
 let saveProducts = (products) =>{
+    rateProduct()
     localStorage.setItem("products",JSON.stringify(products))
 }
 
@@ -544,16 +585,37 @@ let search = () =>{
             result += `<div class="col4 product" data-id=${product.id}>
                             <img src=${product.image}>
                             <h2>${product.product}</h2>
-                            <p>${product.price}</p>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                        </div>
-                    ` 
+                            <p>${product.price}</p>`
+                            result += `<div class="rating">`
+                if(product.rate == 5){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(product.rate == 4){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(product.rate == 3){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(product.rate == 2){
+                    result += `<i class="fa fa-star"></i>`
+                    result += `<i class="fa fa-star"></i>`
+                }else if(product.rate == 1){
+                    result += `<i class="fa fa-star"></i>`
+                }else{
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                    result += `<i class="far fa-star"></i>`
+                }
+                result += `</div>`
+                result += `</div>` 
                     })
             productsContainer.innerHTML = result
             AddSingleProduct()
@@ -570,25 +632,56 @@ if(productsContainer){
 }
 
 let container = document.querySelector(".rating")
+let selectedItem = document.querySelector(".rating-item")
 
 let rateProduct = ()=>{
-const items = container.querySelectorAll(".rating-item")
-container.onclick = e =>{
+const items = selectedItem ? container.querySelectorAll(".rating-item") : "" 
+let rate = JSON.parse(localStorage.getItem("ratings"))
+
+if(container){
+    container.onclick = e =>{
     let elClass = e.target.classList
     if(!elClass.contains("active")){
-        items.forEach(
+        if(items){
+            items.forEach(
             item => item.classList.remove("active")
         );
+        }
         // console.log(e.target.getAttribute("data-rate"),oneProduct.product)
         elClass.add("active")   
         }
-        let rate = JSON.parse(localStorage.getItem("ratings"))
-        let product = rate.some(rate=>rate.product === oneProduct.product)
-        if(rate && !product){
-            rate.push({"product":oneProduct.product,"rate":e.target.getAttribute("data-rate")})
-            localStorage.setItem("ratings",JSON.stringify(rate)) 
+        let pro = JSON.parse(localStorage.getItem("products"))
+        if(rate){
+            let product = rate.some(r=>r.id === oneProduct.id)
+            if(!product){
+                let obj = {"id":oneProduct.id,"product":oneProduct.product,"rate":e.target.getAttribute("data-rate")}
+                let p = pro.slice()
+                let existingObj = p.find(item =>item.product === obj.product && item.id == obj.id)
+                if(existingObj){
+                    Object.assign(existingObj,obj)
+                }else{
+                    p.push(obj)
+                }
+                localStorage.setItem("products",JSON.stringify(p)) 
+            }
+        }else{
+            let obj = {"id":oneProduct.id,"product":oneProduct.product,"rate":e.target.getAttribute("data-rate")}
+                let p = pro.slice()
+                let existingObj = p.find(item =>item.product === obj.product && item.id == obj.id)
+                console.log(existingObj)
+                if(existingObj){
+                    Object.assign(existingObj,obj)
+                }else{
+                    p.push(obj)
+                }
+                localStorage.setItem("products",JSON.stringify(p)) 
+                // console.log(p)
         }
+        document.querySelector("#rate-p").innerText = `${oneProduct.product} has been rated.`
+        document.querySelector("#rate-p").style.color ="#28a745"
+        document.querySelector("#rate-p").style.textAlign ="center"
     }
+}
 }
 if(container){
     rateProduct()
@@ -755,7 +848,7 @@ let loggedIn = () =>{
     let regUser = document.querySelector("#reg")
 
     if(logged){
-        logUser.innerHTML = `<li><a href="profile.html">profile</a></li>`
+        logUser.innerHTML = `<li><a href="profile.html">Profile</a></li>`
         regUser.innerHTML = `<li id="logout"><a href="#">Logout</a></li>`
     }
 }
@@ -816,6 +909,6 @@ if(signUp){
 
 document.addEventListener("DOMContentLoaded",()=>{
     if(productsContainer){
-        getProducts()   
+        getProducts()
     }
 })

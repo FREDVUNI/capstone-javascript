@@ -24,6 +24,10 @@ nav{
     flex: 1;
     text-align: right;
 }
+.account{
+    position: relative;
+    cursor: pointer;
+}
 nav ul{
     display: inline-block;
     list-style-type: none;
@@ -87,6 +91,10 @@ nav ul li a:hover{
     }
     .menu{
         display: block;
+        cursor: pointer;
+    }
+    .user{
+        display:block;
         cursor: pointer;
     }
 }
