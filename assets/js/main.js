@@ -8,3 +8,4 @@ function toggleMenu(){
         menuItems.style.maxHeight = "0px"
     }
 }
+
