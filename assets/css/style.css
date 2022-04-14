@@ -64,6 +64,31 @@ nav ul li a:hover{
     margin-left: 20px;
     display: none;
 }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(255,255,255,0.95);
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown .dropbtn {
+  background-color: inherit;
+}
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 5px 8px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 @media only screen and (max-width:800px){
     .navbar{
         background-color: none;
@@ -78,6 +103,7 @@ nav ul li a:hover{
         transition: max-height 0.5s;
         text-align: left;
         padding-left: 40px;
+        height: 180px;
     }
     nav ul li{
         display: block;
@@ -409,6 +435,7 @@ select:focus{
 .backProducts,.backHome{
     text-decoration:none;
     color:#ffff;
+
 }
 .backProducts:hover,.backHome:hover{
     color:#ff523b;

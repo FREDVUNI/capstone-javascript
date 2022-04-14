@@ -388,7 +388,7 @@ let cart = () =>{
     let result = ""
     let items = JSON.parse(localStorage.getItem("cart"))
 
-    if(items){
+    if(items && items.length > 0){
         result += `<table>`
         result += `<tr>
             <th>Product</th>
@@ -405,7 +405,7 @@ let cart = () =>{
                         <p>${product.product}</p>
                         <small>Price: ${product.price}</small>
                         <br/>
-                        
+                        <a href="#" class="remove-Item" data-id=${product.id}>Remove</a>
                     </div>
                     </div>
                 </td>
@@ -414,18 +414,18 @@ let cart = () =>{
                 </td>
                 <td class="cart-total">UGX. ${Number(parseInt(product.price.split("UGX.").pop()) * 1000 * product.amount).toLocaleString()}</td>`
                 result += `</tr>`
-                // <a href="#" class="remove-Item" data-id=${product.id}>Remove</a>
             })
     }else{
+        let cartSum = document.querySelector(".total-price")
         document.querySelector("#cart-error").innerText = `There are currently no items in the cart`
         document.querySelector("#cart-error").style.color ="#dc3545"
         document.querySelector("#cart-error").style.textAlign ="center"
-
+        cartSum.style.Display = "none"
         let clear_cart = document.querySelector(".clear-cart")
         let checkout = document.querySelector(".checkout")
 
-        clear_cart.innerHTML = `<a href="index.html" class="backHome">Home</a>`
-        checkout.innerHTML = `<a href="shop.html" class="backProducts">Products</a>`
+        clear_cart.innerHTML = `<a href="index.html" class="backHome">HOME PAGE</a>`
+        checkout.innerHTML = `<a href="shop.html" class="backProducts">ALL PRODUCTS</a>`
     }
     cartProducts.innerHTML = result
 }
@@ -454,29 +454,39 @@ let cartTotals = () =>{
             sumPrice += Number(parseInt(item.price.split("UGX.").pop()) * 1000 * item.amount)
             sumAmount += item.amount
         })
+            if(sumAmount > 0){
+                result += `<table>`
+                result += `<tr>`
+                result += `<td>Subtotal</td>`
+                
+                result += `<td>UGX. ${(sumPrice).toLocaleString()}</td>`
+                result += `</tr>`
 
-            result += `<table>`
-            result += `<tr>`
-            result += `<td>Subtotal</td>`
-            
-            result += `<td>UGX. ${(sumPrice).toLocaleString()}</td>`
-            result += `</tr>`
+                result += `<tr>`
+                result += `<td>VAT (10%)</td>`
+                result += `<td>UGX. ${(Math.round(sumPrice * 0.1) + sumPrice).toLocaleString()}</td>`
+                result += `</tr>`
 
-            result += `<tr>`
-            result += `<td>VAT (10%)</td>`
-            result += `<td>UGX. ${(Math.round(sumPrice * 0.1) + sumPrice).toLocaleString()}</td>`
-            result += `</tr>`
+                result += `<tr>`
+                result += `<td>Grand total</td>`
+                result += `<td>UGX.  ${Number(Math.round(sumPrice * 0.1) + sumPrice).toLocaleString()}</td>`
+                result += `</tr>`
 
-            result += `<tr>`
-            result += `<td>Grand total</td>`
-            result += `<td>UGX.  ${Number(Math.round(sumPrice * 0.1) + sumPrice).toLocaleString()}</td>`
-            result += `</tr>`
-
-            result += `</table>`
+                result += `</table>`
+            }else{
+                result += `<div class="content">`
+                result += `<div class="row row2 ">`   
+                result += `<div class="col5">`
+                result += `<img src="assets/images/empty.svg">`
+                result += `</div>`
+                result += `</div>`
+                result += `</div>`
+            }
     }else{
-        document.querySelector("#total-error").innerText = ``
+        document.querySelector("#total-error").innerText = `Your shopping cart is empty`
         document.querySelector("#total-error").style.color ="#dc3545"
         document.querySelector("#total-error").style.textAlign ="center"
+        cartTotal.style.Display = "none"
     }
     cartSum.innerHTML = result
 }
@@ -550,8 +560,9 @@ if(cartsContent){
 
 let removedItem = (id) =>{
     let cart_ = JSON.parse(localStorage.getItem("cart"))
-    let items  = cart_.filter(item => item.id !== id)
+    let items  = cart_.filter(item => item.id != id)
     localStorage.setItem('cart', JSON.stringify(items));
+    window.location = "cart.html"
 }
 
 if(clear){
