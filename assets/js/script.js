@@ -486,7 +486,6 @@ let cartTotals = () =>{
         document.querySelector("#total-error").innerText = `Your shopping cart is empty`
         document.querySelector("#total-error").style.color ="#dc3545"
         document.querySelector("#total-error").style.textAlign ="center"
-        cartTotal.style.Display = "none"
     }
     cartSum.innerHTML = result
 }
