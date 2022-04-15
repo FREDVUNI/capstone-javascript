@@ -14,7 +14,7 @@ const userProfile = JSON.parse(localStorage.getItem("LoggedIn"))
 
 let getProducts = () =>{
     if(!products){
-        fetch("http://127.0.0.1:5501/products.json")
+        fetch("https://kanzucode-iconic.netlify.app/products.json",{mode: 'cors'})
         .then(response=>response.json())
         .then((data) =>{ 
             let result = data
