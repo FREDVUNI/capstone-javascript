@@ -1,6 +1,6 @@
 # Online Shop with User Registration, Login, and Shopping
 
-This is an online shop developed using HTML, CSS, and JavaScript. The shop allows users to register, login, and shop for products. All data is stored in the browser's local storage.
+This is an online shop developed using HTML, CSS, and JavaScript. The shop allows users to register, login, and shop for products. All data is stored in the browser's localStorage.
 
 ## Features
 
