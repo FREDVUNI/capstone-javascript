@@ -4,280 +4,127 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Items</title>
+    <title>Capstone JavaScript</title>
+    <link rel="shortcut icon" href="./assets/images/kanzucode.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <main>
-        <section class="presentation">
-            <div class="introduction">
-                <div class="intro-text">
-                    <h1>Lenovo Laptop</h1>
-                    <p>General. Brand. Lenovo. Model. ...
-                        Display. Size. 14.00-inch. Resolution. ...
-                        Processor. Processor. Intel Core i7 6600U. Base Clock Speed. ...
-                        Memory. RAM. 12GB.
-                        Graphics. Graphics Processor. Intel HD Graphics 520. ...
-                        Storage. Hard disk. No. ...
-                        Connectivity. Wi-Fi standards supported. 802.11 ac. ...
-                        Inputs. Web Camera. Yes</p>
-                     
-                    
-                </div>
-                <div class="cta">
-                   <button class="cta-select">14 inch</button>
-                   <button class="cta-add">Add to cart</button>
-
-
-
-                </div>
-
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <h4>Iconic<span>Gadgets...</span></h4>
+                </a>
             </div>
-            <div class="cover">
-                <img src="./assets/images/lenovo.jpg" alt="Lenovo Laptop">
-            </div>
-
-        </section>
-        <section class="presentation">
-            <div class="introduction">
-                <div class="intro-text">
-                    <h1>Acer Laptop</h1>
-                    <p>General. Brand. Acer. Model. ...
-                        Display. Size. 15.60-inch. Resolution. ...
-                        Processor. Processor. Intel Core i7 7th Gen 7100U. ...
-                        Memory. RAM. 8GB.
-                        Graphics. Graphics Processor. Intel HD Graphics 620. ...
-                        Storage. Hard disk. 1TB. ...
-                        Connectivity. Wi-Fi standards supported. 802.11 ac.
-                        Inputs. Finger Print Sensor. No.</p>
-                     
-                    
+            <nav>
+                <ul id="menuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li class="dropdown">
+                        <a href="#">Account
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-content">
+                            <a href="signin.html" id="log">Login</a>
+                            <a href="signup.html" id="reg">Register</a>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html"><i class="fas fa-shopping-cart cart"> <span id="itemsNum"></span></i></a>
+            <i class="fas fa-bars menu" onclick="toggleMenu()"></i>
+        </div>
+    </div>
+    <div class="content">
+        <div id="rate-p"></div>
+        <div id="cart-error"></div>
+        <div class="single-product">
+            
+        </div>
+        <ul class="rating">
+            <li class="rating-item" data-rate="1"></li>
+            <li class="rating-item active" data-rate="2"></li>
+            <li class="rating-item" data-rate="3"></li>
+            <li class="rating-item" data-rate="4"></li>
+            <li class="rating-item" data-rate="5"></li>
+        </ul>
+        <h2 class="title">Related Products</h2>
+        <div class="row related-products">
+            
+        </div>
+        <span id="noRelation"></span>
+    </div>
+    <!-- <div class="brands">
+        <div class="content">
+            <div class="row">
+                <div class="col5">
+                    <img src="./assets/images/redmibrand.jpg"/>
                 </div>
-                <div class="cta">
-                   <button class="cta-select">15.60 inch</button>
-                   <button class="cta-add">Add to cart</button>
-
-
-
+                <div class="col5">
+                    <img src="./assets/images/samsungbrand.jpg"/>
                 </div>
-
-            </div>
-            <div class="cover">
-                <img src="./assets/images/acer.jpg" alt="Acer Laptop">
-            </div>
-
-        </section>
-        <section class="presentation">
-            <div class="introduction">
-                <div class="intro-text">
-                    <h1>Asus Laptop</h1>
-                    <p>Intel Core i7 8th Gen
-                        Quad Core, 1.8 GHz Clock Speed
-                        8 GB RAM
-                        512 GB Hard Disk
-                        Intel UHD Graphics 620
-                        13.3 inches, 1920 x 1080 pixels
-                        Windows 10 OS
-                        3 Year Warranty</p>
-                     
-                    
+                <div class="col5">
+                    <img src="./assets/images/applebrand.jpg"/>
                 </div>
-                <div class="cta">
-                   <button class="cta-select">13.3 inches</button>
-                   <button class="cta-add">Add to cart</button>
-
-
-
+                <div class="col5">
+                    <img src="./assets/images/acerbrand.jpg"/>
                 </div>
-
             </div>
-            <div class="cover">
-                <img src="./assets/images/asus.jpg" alt="Asus">
-            </div>
-
-        </section>
-        <section class="presentation">
-            <div class="introduction">
-                <div class="intro-text">
-                    <h1>Headsets</h1>
-                    <p>Plug and Play
-                        USB connection
-                        Noise-cancelling mic
-                        Flexible, rotating mic
-                        High sound quality</p>
-                     
-                    
+        </div>
+    </div> -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-co11">
+                    <h3>About us</h3>
+                    <p>Best tech and gadgets to buy right now, tech trends that matter. Reviews & news: TVs, mobile phones, laptops, audio, smart home.</p>
+                    <p>Best tech and gadgets to buy right now, tech trends that matter. Reviews & news: TVs, mobile phones, laptops, audio, smart home.</p> 
                 </div>
-                <div class="cta">
-                   <button class="cta-select">12 inch</button>
-                   <button class="cta-add">Add to cart</button>
-
-
-
+                <div class="footer-co12">
+                    <h3>Links</h3>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="products.html">Products</a>
+                        </li>
+                        <li>
+                            <a href="signup.html">Register</a>
+                        </li>
+                        <li>
+                            <a href="signin.html">Login</a>
+                        </li>
+                    </ul>
                 </div>
-
-            </div>
-            <div class="cover">
-                <img src="./assets/images/boat.jpg" alt="Head sets">
-            </div>
-
-        </section>
-        <section class="presentation">
-            <div class="introduction">
-                <div class="intro-text">
-                    <h1>Ear phones</h1>
-                    <p>Computer headset is perfect for everyday use with compatible electronic devices
-                        Provides wired connectivity with 5.9’L cable
-                        Black on-ear design with high-comfort earpads
-                        </p>
-                     
-                    
+                <div class="footer-co13">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-twitter"></i> Twitter
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="cta">
-                   <button class="cta-select">12 inch</button>
-                   <button class="cta-add">Add to cart</button>
-
-
-
-                </div>
-
             </div>
-            <div class="cover">
-                <img src="./assets/images/booat.jpg" alt="Ear phones">
-            </div>
-
-        </section>
-        <section class="presentation">
-            <div class="introduction">
-                <div class="intro-text">
-                    <h1>Samsung Galaxy</h1>
-                    <p>Description</p>
-                     
-                    
-                </div>
-                <div class="cta">
-                   <button class="cta-select">12 inch</button>
-                   <button class="cta-add">Add to cart</button>
-
-
-
-                </div>
-
-            </div>
-            <div class="cover">
-                <img src="./assets/images/galaxy.jpg" alt="Samsung Phone">
-            </div>
-
-        </section>
-        <section class="presentation">
-            <div class="introduction">
-                <div class="intro-text">
-                    <h1>Nikon Camera</h1>
-                    <p>Description</p>
-                     
-                    
-                </div>
-                <div class="cta">
-                   <button class="cta-select">12 inch</button>
-                   <button class="cta-add">Add to cart</button>
-
-
-
-                </div>
-
-            </div>
-            <div class="cover">
-                <img src="./assets/images/nikon.jpg" alt="Nikon Camera">
-            </div>
-
-        </section>
-        <section class="presentation">
-            <div class="introduction">
-                <div class="intro-text">
-                    <h1>Oppo A9</h1>
-                    <p>Description</p>
-                     
-                    
-                </div>
-                <div class="cta">
-                   <button class="cta-select">12 inch</button>
-                   <button class="cta-add">Add to cart</button>
-
-
-
-                </div>
-
-            </div>
-            <div class="cover">
-                <img src="./assets/images/oppo.jpg" alt="Oppo A9 phone">
-            </div>
-
-        </section>
-        <section class="presentation">
-            <div class="introduction">
-                <div class="intro-text">
-                    <h1>Panasonic Fridge</h1>
-                    <p>Description</p>
-                     
-                    
-                </div>
-                <div class="cta">
-                   <button class="cta-select">12 inch</button>
-                   <button class="cta-add">Add to cart</button>
-
-
-
-                </div>
-
-            </div>
-            <div class="cover">
-                <img src="./assets/images/panasonic.jpg" alt="Fridge">
-            </div>
-
-        </section>
-        <section class="presentation">
-            <div class="introduction">
-                <div class="intro-text">
-                    <h1>Camera</h1>
-                    <p>Description</p>
-                     
-                    
-                </div>
-                <div class="cta">
-                   <button class="cta-select">12 inch</button>
-                   <button class="cta-add">Add to cart</button>
-
-
-
-                </div>
-
-            </div>
-            <div class="cover">
-                <img src="./assets/images/pz.jpg" alt="camera">
-            </div>
-
-        </section>
-        <section class="presentation">
-            <div class="introduction">
-                <div class="intro-text">
-                    <h1>Redmi Note Phone</h1>
-                    <p>Description</p>
-                     
-                    
-                </div>
-                <div class="cta">
-                   <button class="cta-select">12 inch</button>
-                   <button class="cta-add">Add to cart</button>
-
-
-
-                </div>
-
-            </div>
-            <div class="cover">
-                <img src="./assets/images/redminote.jpg" alt="Phone">
-            </div>
-
-        </section>
-    </main>
+            <br/>
+            <p class="copyright">Copyright Iconicgadgets &copy; <script>document.write(new Date().getFullYear())</script></p>
+        </div>
+    </div>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
