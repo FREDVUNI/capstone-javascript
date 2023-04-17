@@ -14,7 +14,7 @@ const userProfile = JSON.parse(localStorage.getItem("LoggedIn"))
 
 let getProducts = () =>{
     if(!products){
-        fetch("http://127.0.0.1:5501/products.json")
+        fetch("https://kanzucode-iconic.netlify.app/products.json",{mode: 'cors'})
         .then(response=>response.json())
         .then((data) =>{ 
             let result = data
@@ -486,7 +486,6 @@ let cartTotals = () =>{
         document.querySelector("#total-error").innerText = `Your shopping cart is empty`
         document.querySelector("#total-error").style.color ="#dc3545"
         document.querySelector("#total-error").style.textAlign ="center"
-        cartTotal.style.Display = "none"
     }
     cartSum.innerHTML = result
 }
