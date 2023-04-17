@@ -6,14 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capstone JavaScript</title>
     <link rel="shortcut icon" href="./assets/images/kanzucode.png" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <h4>Iconic<span>Gadgets...</span></h4>
+                </a>
+            </div>
+            <nav>
+                <ul id="menuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li class="dropdown">
+                        <a href="#">Account
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-content">
+                            <a href="signin.html" id="log">Login</a>
+                            <a href="signup.html" id="reg">Register</a>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html"><i class="fas fa-shopping-cart cart"> <span id="itemsNum"></span></i></a>
+            <i class="fas fa-bars menu" onclick="toggleMenu()"></i>
+        </div>
+    </div>
     <div class="content">
+        <div id="rate-p"></div>
+        <div id="cart-error"></div>
         <div class="single-product">
             
         </div>
+        <ul class="rating">
+            <li class="rating-item" data-rate="1"></li>
+            <li class="rating-item active" data-rate="2"></li>
+            <li class="rating-item" data-rate="3"></li>
+            <li class="rating-item" data-rate="4"></li>
+            <li class="rating-item" data-rate="5"></li>
+        </ul>
         <h2 class="title">Related Products</h2>
         <div class="row related-products">
             
@@ -43,23 +79,23 @@
             <div class="row">
                 <div class="footer-co11">
                     <h3>About us</h3>
-                    <p>lorem capstone javascript lorem capstone javascript lorem capstone javascript lorem capstone javascript.</p>
-                    <p>lorem capstone javascript lorem capstone javascript lorem capstone javascript lorem capstone javascript.</p>
+                    <p>Best tech and gadgets to buy right now, tech trends that matter. Reviews & news: TVs, mobile phones, laptops, audio, smart home.</p>
+                    <p>Best tech and gadgets to buy right now, tech trends that matter. Reviews & news: TVs, mobile phones, laptops, audio, smart home.</p> 
                 </div>
                 <div class="footer-co12">
                     <h3>Links</h3>
                     <ul>
                         <li>
-                            <a href="#">products</a>
+                            <a href="index.html">Home</a>
                         </li>
                         <li>
-                            <a href="#">products</a>
+                            <a href="products.html">Products</a>
                         </li>
                         <li>
-                            <a href="#">products</a>
+                            <a href="signup.html">Register</a>
                         </li>
                         <li>
-                            <a href="#">products</a>
+                            <a href="signin.html">Login</a>
                         </li>
                     </ul>
                 </div>
@@ -88,6 +124,7 @@
             <p class="copyright">Copyright Iconicgadgets &copy; <script>document.write(new Date().getFullYear())</script></p>
         </div>
     </div>
+    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

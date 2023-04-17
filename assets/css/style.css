@@ -12,6 +12,118 @@ body {
     color: #25364a;
     background-color: #ffff;
 }
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255,255,255,0.95);
+    width: 100%;
+    z-index: 300;
+}
+nav{
+    flex: 1;
+    text-align: right;
+}
+.account{
+    position: relative;
+    cursor: pointer;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li{
+    display:inline-block;
+    margin-right: 20px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #555;
+    font-size: 18px;
+}
+nav ul li a:hover{
+    color: #ff523b;
+}
+.logo h4{
+    font-size: 25px;
+}
+.logo h4 span{
+    color: #ff523b;
+}
+.logo a{
+    text-decoration: none;
+}
+.cart span{
+    color: #ff523b;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+}
+.menu{
+    font-size: 25px;
+    margin-left: 20px;
+    display: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(255,255,255,0.95);
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown .dropbtn {
+  background-color: inherit;
+}
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 5px 8px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+@media only screen and (max-width:800px){
+    .navbar{
+        background-color: none;
+    }
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: rgba(255,255,255,0.95);
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 0.5s;
+        text-align: left;
+        padding-left: 40px;
+        height: 180px;
+    }
+    nav ul li{
+        display: block;
+        margin-right: 50px;
+        margin-top:10px;
+        margin-bottom: 10px;
+    }
+    nav ul li a{
+        color: #555;
+        text-align: left;
+    }
+    .menu{
+        display: block;
+        cursor: pointer;
+    }
+    .user{
+        display:block;
+        cursor: pointer;
+    }
+}
 .intro-text h1 {
     font-size: 2.8rem;
     text-transform: uppercase;
@@ -30,9 +142,10 @@ body {
 }
 .presentation {
     display: flex;
-    width: 90%;
+    width: 100%;
     margin: auto;
     min-height: 80vh;
+    padding-top: 100px;
     align-items: center;
 }
 .cover {
@@ -141,17 +254,21 @@ body {
   min-width:200px;
   margin-bottom:20px;
 }
-.col p{
+.clear-cart{
+    margin-top:20px;
+}
+.col a{
     width:100%;
     border:5px solid #ccc;
     cursor:pointer;
     padding: 30px;
-    color: rgb(85, 85, 85);
+    color: rgb(34, 12, 12);
     font-size: 1.5em;
     text-transform: uppercase;
     text-align: center;
+    text-decoration:none;
 }
-.col p:hover{
+.col a:hover{
     border: 5px solid #ff523b;
     color: #ff523b;
 }
@@ -217,7 +334,7 @@ h4{
 .col4{
     font-size:14px;
 }
-.rating .fa{
+.rating .fa-star{
     color:#ff523b;
 }
 .brands{
@@ -246,6 +363,12 @@ h4{
   padding: 15px;
   font-size: 0.9rem;
   height: 48px;
+}
+#reg-error,#login-error,#profileHis{
+    color: #dc3545;
+}
+#profileHis{
+    text-align:left;
 }
 select{
     display: block;
@@ -301,8 +424,50 @@ select:focus{
   line-height: 1.6;
   cursor:pointer;
 }
+.btn:hover{
+    background-color:#fff;
+    color:#ff523b;
+    border: 1px solid #ff523b;
+}
 #details{
     margin-top:35px;
+}
+.backProducts,.backHome{
+    text-decoration:none;
+    color:#ffff;
+
+}
+.backProducts:hover,.backHome:hover{
+    color:#ff523b;
+}
+.rating{
+    display:flex;
+    padding:0;
+    margin:0;
+}
+.rating li{
+    list-style-type:none;
+}
+.rating-item{
+    border:1px solid #fff;
+    cursor:pointer;
+    font-size:2em;
+    color:#ff523b;
+}
+.rating-item::before{
+    content:"\2605";
+}
+.rating-item.active ~ .rating-item::before{
+    content:"\2606";
+}
+.rating:hover .rating-item::before{
+    content:"\2605";
+}
+.rating-item:hover ~ .rating-item::before{
+    content:"\2606";
+}
+.listHistory{
+    text-align:left;
 }
 table{
     width: 100%;
