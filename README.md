@@ -26,7 +26,6 @@ To use the online shop, simply open the index.html file in your web browser. The
 ## Screenshot 
 ![image](https://github.com/FREDVUNI/capstone-javascript/assets/41730664/e51d752f-9795-4135-b835-026526ce6e67)
 
-
 ## Known Issues
 - Since all data is stored in the browser's local storage, if the user clears their browser's data or switches to a different device, their account information and shopping cart will not be accessible.
 - This online shop is for demonstration purposes only and does not include features such as payment processing or shipping.
